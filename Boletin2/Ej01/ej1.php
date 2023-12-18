@@ -23,11 +23,11 @@
         <?php
         // Verificar si el usuario ha enviado el formulario, si es así le muestro lo que ha enviado con una bienvenida
             if(isset($_GET['enviar'])) {
-                $nombre = $_GET['nombre'];
-                $correo = $_GET['correo'];
+                $name = $_GET['nombre'];
+                $email = $_GET['correo'];
         ?>
         <div class="resultado">
-            <p>El nombre introducido ha sido: <?php print $nombre ?> y el correo ha sido <?php print $correo ?> </p>            
+            <p>El nombre introducido ha sido: <?php print $name ?> y el correo ha sido <?php print $email ?> </p>            
         </div>
         <?php
         // Si no lo ha enviado, se lo muestro para que lo rellene y envíe

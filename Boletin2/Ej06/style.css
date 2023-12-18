@@ -41,7 +41,7 @@ form {
 }
 
 .resultado {
-    height: 315px;
+    height: 275px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,12 +49,19 @@ form {
     overflow: auto;
     text-align: center;
     background-color: aqua;
-    padding: 10px;    
-    width: 315px;
+    padding: 10px;
+    width: 199px;
     border-radius: 8px;
 }
 
 
 .buttons {
     display: inline-block;
+}
+
+img {
+    aspect-ratio: 707/1000;
+    vertical-align: middle;
+    border-style: none;
+    width: 165px;
 }
