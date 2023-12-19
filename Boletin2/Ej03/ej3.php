@@ -14,15 +14,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <?php
         // Función para multiplicar el número dado por parámetro y mostrarlo en una lista desordenada
         function multiplierNumber($number) {
-            for ($i = 0; $i <= 10; $i++) {
-                ?><li><?php echo $number . " * " . $i . " = " . ($number * $i);?></li><?php
-            }
-        }
-        
+            ?>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Operación</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php for ($i = 1; $i <= 10; $i++) { ?>
+                        <tr>
+                            <td><?php echo $number . " * " . $i; ?></td>
+                            <td><?php echo ($number * $i); ?></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+            <?php
+        }        
     ?>
+
     <div class="content">
         <div class="container">
             <div class="h1">
@@ -30,23 +46,24 @@
             </div>
         <?php
         // Verificar si el usuario ha enviado el formulario, si es así le muestro lo que ha enviado con una bienvenida
-            if(isset($_GET['enviar'])) {
+            if(isset($_GET['send'])) {
                 $number = $_GET['number'];                
         ?>
-        <div class="resultado">
-            <ul>
-                <?php multiplierNumber($number); ?>
-            </ul>
-        </div>
+            <div class="resultado">
+                <?php multiplierNumber($number) ?>                
+            </div>
+            <form method="get" class="buttForm">
+                <button type="submit" class="submit btn btn-info" name="goBack">Volver atrás</button>
+            </form>
         <?php
         // Si no lo ha enviado, se lo muestro para que lo rellene y envíe
             }else{
         ?>
         <!-- El action es para que se ejecute el código del mismo PHP en vez de enviarlo a otro PHP -->
-            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="get">
+            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="get" class="initialForm">
                 <label class="number" for="number">Introduzca un número</label>
-                <input class="number-input" type="number" name="number" placeholder="Número" />
-                <button type="submit" class="submit btn btn-info" name="enviar">Enviar</button>
+                <input class="number-input" type="number" name="number" placeholder="Número" required/>
+                <button type="submit" class="submit btn btn-info" name="send">Enviar</button>
             </form>
         </div>
     </div>

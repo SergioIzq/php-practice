@@ -21,24 +21,27 @@
             </div>
         <?php
         // Verificar si el usuario ha enviado el formulario, si es así le muestro lo que ha enviado con una bienvenida
-            if(isset($_POST['enviar'])) {
-                $nombre = $_POST['nombre'];
-                $correo = $_POST['correo'];
+            if(isset($_POST['send'])) {
+                $name = $_POST['name'];
+                $email = $_POST['email'];
         ?>
         <div class="resultado">
-            <p>El nombre introducido ha sido: <?php print $nombre ?> y el correo ha sido <?php print $correo ?> </p>            
+            <p>El nombre introducido ha sido: <?php echo $name ?> y el correo ha sido <?php echo $email ?> </p> 
+            <form method="post">
+                <button type="submit" class="submit btn btn-info" name="goBack">Volver atrás</button>
+            </form>
         </div>
         <?php
         // Si no lo ha enviado, se lo muestro para que lo rellene y envíe
             }else{
         ?>
-        <!-- El action es para que se ejecute el código del mismo PHP en vez de enviarlo a otro PHP -->
+        <!-- El action es para que se ejecute el código del mismo PHP en vez de sendlo a otro PHP -->
             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-                <label class="nombre-label" for="nombre">Nombre</label>   
-                <input class="nombre-input" type="text" name="nombre" placeholder="Nombre" />
-                <label class="correo-input" for="correo">Correo electrónico</label>
-                <input class="correo-input" type="email" name="correo" placeholder="Correo" />
-                <button type="submit" class="submit btn btn-info" name="enviar">Enviar</button>
+                <label class="name-label" for="name">Nombre</label>   
+                <input class="name-input" type="text" name="name" placeholder="Nombre" required/>
+                <label class="email-input" for="email">Correo electrónico</label>
+                <input class="email-input" type="email" name="email" placeholder="Correo" required/>
+                <button type="submit" class="submit btn btn-info" name="send">Enviar</button>
             </form>
         </div>
     </div>

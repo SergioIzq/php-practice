@@ -21,13 +21,13 @@
                <h1>Imagen para cargar</h1>
             </div>
         <?php
-         if(isset($_POST['enviar'])) {
+         if(isset($_POST['send'])) {
                 // Verificar si el usuario ha enviado el formulario, si es así le muestro lo que ha enviado con una bienvenida
                 if (isset($_FILES["imagen"]) && $_FILES["imagen"]["error"] == 0) {
                     $imagenNombre = $_FILES["imagen"]["name"];
                     $imagenTemp = $_FILES["imagen"]["tmp_name"];
                     // Mover el archivo a una ubicación específica
-                    $carpetaDestino = "./imagenes";
+                    $carpetaDestino = "./imagenes/";
                     $rutaCompleta = $carpetaDestino . $imagenNombre;
                     move_uploaded_file($imagenTemp, $rutaCompleta);
                     // Quitamos la extension de la imagen
@@ -44,16 +44,20 @@
             <div class="resultado">
             <!-- Mostrar la imagen cargada -->
                 <img src='<?php echo $rutaCompleta ?>' alt='Imagen Cargada'>
+                
             </div>
+            <form method="get" class="buttForm">
+                    <button type="submit" class="submit btn btn-light" name="goBack">Volver atrás</button>
+            </form>
            <?php
             // Si no lo ha enviado, se lo muestro para que lo rellene y envíe
-            } else {
+                } else {
             ?>
         <!-- El action es para que se ejecute el código del mismo PHP en vez de enviarlo a otro PHP -->
             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
                 <label class="number" for="number">Seleccione una foto de su equipo para mostrar</label>
                 <input type="file" id="imagen" name="imagen" accept="image/*" required>
-                <button type="submit" class="submit btn btn-info" name="enviar">Cargar imagen</button>
+                <button type="submit" class="submit btn btn-info" name="send">Cargar imagen</button>
         </form>
      </div>
     </div>

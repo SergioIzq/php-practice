@@ -21,19 +21,24 @@
             </div>
         <?php
         // Verificar si el usuario ha enviado el formulario, si es así le muestro lo que ha enviado con una bienvenida
-            if(isset($_POST['send'])) {
-                $color = $_POST['color'];
+            if(isset($_GET['send'])) {
+                $color = $_GET['color'];
+                $backgroundColor = '#ffffff';
+                if ($color === 'blanco' || $color === '#ffffff') {
+                    $backgroundColor = '#000000';
+                }
+                
         ?>
-        <div class="resultado">
-            <p>Su color favorito es  <?php ?> </p>            
+        <div style="background: <?php echo $backgroundColor; ?>;" class="resultado">
+            <p style="color: <?php echo $color; ?>;">Su color favorito es <?php echo $color; ?> </p>
         </div>
         <?php
         // Si no lo ha enviado, se lo muestro para que lo rellene y envíe
             }else{
         ?>
         <!-- El action es para que se ejecute el código del mismo PHP en vez de enviarlo a otro PHP -->
-            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-                <label class="color-label" for="color">Eliga su color favorito</label>   
+            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="get">
+                <label class="color-label" for="color">Elija su color favorito</label>   
                 <input class="color-input" type="color" name="color" />
                 <button type="submit" class="submit btn btn-info" name="send">Enviar</button>
             </form>

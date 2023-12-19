@@ -18,11 +18,13 @@
             </div>
         <?php
         // Verificar si el usuario ha enviado el formulario
-        if (isset($_POST['enviar'])) {
-            $button = $_POST['enviar'];
+        if (isset($_POST['send'])) {
+            $divideByZero = false;
+            $button = $_POST['send'];
             $num1 = $_POST['num1'];
             $num2 = $_POST['num2'];
             $result = '';
+            
             //Switch para que dependiendo del botón pulsado se haga una operación u otra
             switch ($button) {
                 case "+":
@@ -32,15 +34,31 @@
                     $result = "El resultado de " . $num1 . " - " . $num2 . " es " . ($num1 - $num2);
                     break;
                 case "/":
-                    $result = "El resultado de " . $num1 . " / " . $num2 . " es " . ($num1 / $num2);
+                    if($num2 != 0 && $num1 != 0) {
+                        $result = "El resultado de " . $num1 . " / " . $num2 . " es " . ($num1 / $num2);
+                    }else{
+                        $divideByZero = true;
+                    }
                     break;
                 case "*":
                     $result = "El resultado de " . $num1 . " * " . $num2 . " es " . ($num1 * $num2);
                     break;
-            }                
+            }                            
         ?>
         <div class="resultado">
-            <p><?php echo $result; ?></p>
+            <p><?php 
+                    if($divideByZero) {
+                ?>
+                        <p style="color: red;">Infinito</p>
+                <?php
+                    }else {
+                        echo $result; 
+                    }
+                ?>
+            </p>
+            <form method="get">
+                <button type="submit" class="submit btn btn-info" name="goBack">Volver atrás</button>
+            </form>
         </div>
         <?php
         // Si no se ha enviado, mostrar el formulario
@@ -51,10 +69,10 @@
                 <input class="number-input" type="number" name="num1" placeholder="Número 1" required />
                 <input class="number-input" type="number" name="num2" placeholder="Número 2" required />
                 <div class="buttons">
-                    <button type="submit" class="submit btn btn-info" name="enviar" value="+">+</button>
-                    <button type="submit" class="submit btn btn-info" name="enviar" value="-">-</button>
-                    <button type="submit" class="submit btn btn-info" name="enviar" value="/">/</button>
-                    <button type="submit" class="submit btn btn-info" name="enviar" value="*">*</button>
+                    <button type="submit" class="submit btn btn-info" name="send" value="+">+</button>
+                    <button type="submit" class="submit btn btn-info" name="send" value="-">-</button>
+                    <button type="submit" class="submit btn btn-info" name="send" value="/">/</button>
+                    <button type="submit" class="submit btn btn-info" name="send" value="*">*</button>
                 </div>  
             </form>
         </div>

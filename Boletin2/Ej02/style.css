@@ -1,5 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
+    font-weight: bold;
 }
 
 .content {
@@ -17,7 +18,7 @@ body {
     gap: 10px;
     width: 500px;
     height: 500px;
-    background-color: rgba(96, 255, 255, 0.815);
+    background-color: #94DDBC;
     border-radius: 8px;
     align-items: center;
 }
@@ -27,15 +28,16 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: orange;
+    background-color: #A0ECD0;
     padding: 10px;
+    border-radius: 8px;
 }
 
 form {
     display: flex;
     flex-flow: column nowrap;
     gap: 10px;
-    background-color: aqua;
+    background-color: #A0ECD0;
     border-radius: 8px;    
     padding: 10px;
 }
@@ -48,13 +50,8 @@ form {
     flex-flow: column wrap;
     overflow: auto;
     text-align: center;
-    background-color: aqua;
+    background-color: #A0ECD0;
     padding: 10px;    
     width: 315px;
     border-radius: 8px;
-}
-
-
-.buttons {
-    display: inline-block;
 }

@@ -17,12 +17,20 @@
     <?php
         // Función para multiplicar el número dado por parámetro y mostrarlo en una lista desordenada
         function addNumbers($numbers) {
-            $result = 0;
-            for ($i = 0; $i <= count($numbers) - 1; $i++) {
-                $result = $result + $numbers[$i];
+            $pattern = '/^\d+(\s*,\s*\d+)*$/';
+            if (preg_match($pattern, $numbers)) {
+                $numbersArray = explode(",", $numbers);
+                $result = array_sum($numbersArray);
+                ?>
+                <p>La suma de los números dados es <?php echo $result; ?></p>
+                <?php
+            } else {
+                ?>
+                <p style="color: red;">Formato recibido incorrecto debe ser (numero1, numero2, ...)</p>
+                <?php
             }
-            return $result;
         }
+        
         
     ?>
     <div class="content">
@@ -32,12 +40,13 @@
             </div>
         <?php
         // Verificar si el usuario ha enviado el formulario, si es así le muestro lo que ha enviado con una bienvenida
-            if(isset($_POST['enviar'])) {
+            if(isset($_POST['send'])) {
                 $numbers  = $_POST['numbers'];                 
-                $numbers = explode(",", $numbers);
         ?>
         <div class="resultado">
-            <p>La suma de los números dados es <?php echo addNumbers($numbers)?></p>
+            <?php             
+                addNumbers($numbers)
+            ?>
         </div>
         <?php
         // Si no lo ha enviado, se lo muestro para que lo rellene y envíe
@@ -47,7 +56,7 @@
             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
                 <label class="number" for="number">Introduzca números con formato (num1,num2,num3)</label>
                 <input class="number-input" type="text" name="numbers" placeholder="Número" />
-                <button type="submit" class="submit btn btn-info" name="enviar">Enviar</button>
+                <button type="submit" class="submit btn btn-info" name="send">Enviar</button>
             </form>
         </div>
     </div>

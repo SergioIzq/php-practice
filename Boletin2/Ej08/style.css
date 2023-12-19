@@ -1,5 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
+    font-weight: bold;
 }
 
 .content {
@@ -29,6 +30,7 @@ body {
     text-align: center;
     background-color: orange;
     padding: 10px;
+    border-radius: 8px;
 }
 
 form {

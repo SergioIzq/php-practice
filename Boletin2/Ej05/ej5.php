@@ -17,11 +17,15 @@
     <?php
         // Función para comprobar la edad de un usuario, si es mayor que 18 devuelve true sino false
         function checkAge($age) {
-            $isAdult = false;
-            if($age>=18) {
-                $isAdult = true;
-            }
-            return $isAdult;
+            if($age > 0 ) {
+                if($age >= 18) {
+                    ?><p>El usuario es mayor de edad</p><?php
+                }else{
+                    ?><p>El usuario es menor de edad</p><?php
+                }
+            }else{ 
+            ?><p style="color: red;">La edad tiene que ser mayor que 0</p><?php
+        }
         }
         
     ?>
@@ -32,15 +36,14 @@
             </div>
         <?php
         // Verificar si el usuario ha enviado el formulario, si es así le muestro lo que ha enviado con una bienvenida
-            if(isset($_POST['enviar'])) {
+            if(isset($_POST['send'])) {
                 $age = $_POST['age'];                
         ?>
-        <div class="resultado">
-                <?php if(checkAge($age)) {
-                    ?><p>El usuario es mayor de edad</p><?php
-                }else {
-                    ?> <p>El usuario no es mayor de edad</p><?php
-                } ?>
+        <div class="resultado">            
+            <?php checkAge($age) ?>
+            <form method="post">
+                <button type="submit" class="submit btn btn-light" name="goBack">Volver atrás</button>
+            </form>                
         </div>
         <?php
         // Si no lo ha enviado, se lo muestro para que lo rellene y envíe
@@ -49,8 +52,8 @@
         <!-- El action es para que se ejecute el código del mismo PHP en vez de enviarlo a otro PHP -->
             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
                 <label class="number" for="number">Introduzca una edad</label>
-                <input class="number-input" type="number" name="age" placeholder="Número" />
-                <button type="submit" class="submit btn btn-info" name="enviar">Enviar</button>
+                <input class="number-input" type="number" name="age" placeholder="Número" required/>
+                <button type="submit" class="submit btn btn-light" name="send">Enviar</button>
             </form>
         </div>
     </div>
