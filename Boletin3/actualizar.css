@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    padding: 20px;
+}
+
+.mensajeExito {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redireccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
