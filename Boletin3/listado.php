@@ -12,7 +12,7 @@
 <body>
     <div class="container">
     <?php
-    // Conectarse a la base de datos
+    // Conectarse a la base de datos y controlar los posibles fallos
     try {
         $dwes = new PDO('mysql:host=localhost;dbname=dwes', 'user_dwes', 'userUSER2');
         $dwes->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -21,11 +21,12 @@
         die();
     }
 
-    // Consultar las familias
+    // Sentencia SQL para consultar las familias
     $consultaFamilias = $dwes->query('SELECT nombre, cod FROM familia');
     $familias = $consultaFamilias->fetchAll(PDO::FETCH_ASSOC);
     ?>
 
+    <!-- Formulario para mostrar al usuario las familias a seleccionar generado de forma dinámica -->
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <label for="familia">Selecciona una familia:</label>
         <select name="familia" id="familia">

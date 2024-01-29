@@ -31,12 +31,14 @@
         $pvp = $_POST["pvp"];
 
         // Realizar la consulta para actualizar los datos del producto
-        $consultaActualizar = "UPDATE producto SET nombre_corto = '$nombreCorto', nombre = '$nombre', descripcion = '$descripcion', pvp = '$pvp' WHERE cod = '$codigoProducto'";
+        $consultaActualizar = "UPDATE producto SET nombre_corto = '$nombreCorto', nombre = '$nombre', descripcion = '$descripcion', pvp = '$pvp' 
+        WHERE cod = '$codigoProducto'";
         $resultado = $dwes->exec($consultaActualizar);
 
         // Verificar si la consulta se ejecutó correctamente
         if ($consultaActualizar) {
             ?>
+            <!-- Si la consulta devuelve true muestro un mensaje y redirecciono después de 3 segundos -->
             <div class="mensajeExito">
                 <p>Los datos del producto se actualizaron correctamente.</p>
             </div>
@@ -52,7 +54,8 @@
         exit();
         
     } else {
-        // Si el formulario no se envió con el botón "Actualizar", mostrar un mensaje de error
+        // Si el formulario no se envió con el botón "Actualizar", es decir el usuario se intenta saltar el formulario mediante la barra de búsqueda del navegador
+        // , mostrar un mensaje de error
         ?><p>Error: No se ha enviado el formulario correctamente.</p><?php
     }
     ?>

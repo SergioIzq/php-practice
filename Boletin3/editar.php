@@ -40,6 +40,7 @@
                     <h2>Editar Producto</h2>
                 </div>
 
+                <!-- Formulario para mostrar el nombre, descripción y precio del producto seleccionado anteriormente pudiéndose modificar el mismo -->
                 <form action="actualizar.php" method="post">
                     <input type="hidden" name="producto_cod" value="<?php echo $codigoProductoSeleccionado; ?>">
 
