@@ -66,7 +66,7 @@
             ?>
                     </div>
             <div class="container">
-            <h2>Productos para la familia <?php echo $nombreFamilia; ?>:</h2>
+            <h2>Productos en <?php echo $nombreFamilia; ?>:</h2>
             </div>
             <div class="container">
                 <div class="table-container">

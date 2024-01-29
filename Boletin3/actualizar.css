@@ -1,18 +1,33 @@
-*{
-    margin: 0;
-    padding: 0;
+body {
     font-family: 'Roboto';
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-}
+    text-align: center;
+  }
 
-.mensajeExito {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+  .mensajeExito, .redireccion {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+  }
 
-.redireccion {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+  .mensajeExito {
+    background-color: #4caf50;
+    color: #fff;
+  }
+
+  .redireccion {
+    background-color: #2196F3;
+    color: #fff;
+  }

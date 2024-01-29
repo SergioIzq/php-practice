@@ -1,6 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';    
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+    background-color: #f4f4f4;
 }
 
 h2 {
@@ -58,3 +66,4 @@ a button:hover {
     justify-content: center;
     align-items: center;
 }
+

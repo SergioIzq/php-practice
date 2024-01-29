@@ -51,7 +51,7 @@
                     <input type="text" name="nombre" value="<?php echo $producto['nombre']; ?>"><br>
 
                     <label for="descripcion">Descripción:</label>
-                    <textarea name="descripcion" required><?php echo $producto['descripcion']; ?></textarea><br>
+                    <textarea class="descripcion" name="descripcion" rows="15" required><?php echo $producto['descripcion']; ?></textarea><br>
 
                     <label for="pvp">PVP:</label>
                     <input type="text" name="pvp" value="<?php echo $producto['pvp']; ?>" required><br>

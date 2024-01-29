@@ -39,11 +39,13 @@
         if ($consultaActualizar) {
             ?>
             <!-- Si la consulta devuelve true muestro un mensaje y redirecciono después de 3 segundos -->
-            <div class="mensajeExito">
-                <p>Los datos del producto se actualizaron correctamente.</p>
-            </div>
-            <div class="redireccion">
-                <p>Redireccionando a la página principal...</p>
+            <div class="box">
+                <div class="mensajeExito">
+                    <p>Los datos del producto se actualizaron correctamente.</p>
+                </div>
+                <div class="redireccion">
+                    <p>Redireccionando a la página principal...</p>
+                </div>
             </div><?php
         } else {
             ?><p>Error: No se pudieron actualizar los datos del producto.</p><?php
