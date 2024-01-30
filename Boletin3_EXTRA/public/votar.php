@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Votación</title>
     <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="votar.css">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <h2>¿Quién está votando?</h2>
@@ -15,7 +15,7 @@
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Obtener la lista de empleados del departamento de ventas
-        $stmt = $pdo->prepare("SELECT * FROM empleados WHERE es_candidato = 1");
+        $stmt = $pdo->prepare("SELECT * FROM empleados");
         $stmt->execute();
         $empleados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

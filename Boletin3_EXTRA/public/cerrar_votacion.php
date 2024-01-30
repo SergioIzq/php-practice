@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Cerrar Votación</title>
-    <link rel="stylesheet" href="cerrar_votacion.css">
+    <link rel="stylesheet" href="css/cerrar_votacion.css">
     <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
 </head>
@@ -49,7 +50,7 @@
                     }
                     
                     // Restablecer la columna vota_a a nulo para permitir otra votación
-                    $stmtReset = $pdo->prepare("UPDATE empleados SET vota_a = NULL WHERE es_candidato = 1");
+                    $stmtReset = $pdo->prepare("UPDATE empleados SET vota_a = NULL");
                     $stmtReset->execute();
                 } else {
                     ?><p>No hay votos registrados.</p><?php

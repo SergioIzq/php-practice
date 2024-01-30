@@ -1,0 +1,151 @@
+/* Estilos generales */
+* {
+    text-align: center;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 2%, rgba(252, 70, 107, 1) 100%);
+    color: #ecf0f1;
+    font-family: 'Mulish', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-inline: 200px;    
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+li {
+    margin-bottom: 15px;
+    background-color: #ff345d;
+    padding: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-family: 'Mulish', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+}
+
+.nav li {
+    margin-right: 15px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.button {
+    background-color: #ff345d;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #5900a5;
+}
+
+h1 {
+    font-size: 90px;
+    font-family: 'Honk', system-ui;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 50px;
+    font-family: 'Mulish', sans-serif;
+}
+
+li:hover {
+    background-color: #5900a5;
+}
+
+input[type="submit"] {
+    background-color: #ff345d; 
+    color: #ecf0f1;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #5900a5; 
+}
+
+/* Estilos específicos para formularios y empleados */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: #5900a5;
+}
+
+.empleado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 5px;
+    margin: 20px;
+    font-size: 14px;
+    background-color: #ff345d;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5900a5;
+}
+
+.empleado-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
