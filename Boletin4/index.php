@@ -1,5 +1,5 @@
 <?php
-
-    require_once 'CONTROLADOR/listado_controlador.php'
+    
+    require 'CONTROLADOR/controlador_listado.php';
 
 ?>
