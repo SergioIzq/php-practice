@@ -28,11 +28,11 @@
         <div class="botones">
             <!-- Botón para enviar el formulario de actualización -->
             <button class="boton-actualizar" type="submit" name="accion" value="actualizar">Actualizar</button>
-        </div>
     </form>
 
     <form action="../index.php">
         <!-- Botón para cancelar y volver al índice -->
-        <button class="boton-cancelar" type="submit" name="cancelar" value="cancelar">Cancelar</button>
+            <button class="boton-cancelar" type="submit" name="cancelar" value="cancelar">Cancelar</button>
+        </div>
     </form>
 </div>
