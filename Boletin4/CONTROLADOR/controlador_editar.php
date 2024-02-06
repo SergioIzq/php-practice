@@ -1,7 +1,6 @@
 <?php
 
 require_once '../MODELO/modelo_editar.php';
-require '../MODELO/config.php';
 
 $modeloEditar = new ModeloEditar();
 
@@ -15,16 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Verificar la acción del formulario
         if (isset($_POST["accion"])) {
-            $accion = $_POST["accion"];
-
-            if ($accion === "actualizar") {
-                // Guardar los datos en la sesión antes de redirigir
-                $_SESSION['codigoProducto'] = $codigoProducto;
-                redirigir(ACTUALIZAR_PRODUCTO_URL);
-            } elseif ($accion === "cancelar") {
-                // Redirigir a otra página o hacer cualquier otra acción si se presionó el botón "Cancelar"
-                redirigir(BASE_URL);  // Cambia BASE_URL a la URL deseada
-            }
+            $accion = $_POST["accion"];            
         } else {
             // Mostrar formulario de edición
             require '../VISTA/vista_editar.php';

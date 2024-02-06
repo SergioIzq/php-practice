@@ -9,7 +9,6 @@ body {
     background-color: #f4f4f4;
     margin: 20px;
     font-family: 'Roboto';
-
 }
 
 header {
@@ -20,7 +19,7 @@ header {
 }
 
 h1 {
-    margin-bottom: 20px;
+    font-size: 50px;
 }
 
 .container {    
@@ -80,6 +79,7 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
+    font-size: 25px;
 }
 
 input,
@@ -93,7 +93,7 @@ textarea {
 }
 
 button {
-    padding: 10px 20px;
+    padding: 4px 20px 2px 20px;
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -121,6 +121,7 @@ a button:hover {
 
 h2 {
     padding: 10px;
+    font-size: 24px;
 }
 
 .box {
@@ -133,18 +134,53 @@ h2 {
     align-items: center;
   }
 
-  .mensajeExito, .redireccion {
+.mensajeExito, .redireccion {
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 5px;
-  }
+}
 
-  .mensajeExito {
-    background-color: #4caf50;
-    color: #fff;
-  }
+.mensajeExito {
+    font-size: 20px;
+}
 
-  .redireccion {
-    background-color: #2196F3;
+.redireccion {
+    background-color: #58a862;
     color: #fff;
-  }
+}
+
+header {
+    text-align: center;
+    background-color: #17ad2b;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    /* margin-top: 53px; */
+    align-items: center;
+    height: 100px;
+}
+
+select {
+    font-size: 15px;
+}
+
+.label-listado{
+    display: flex;
+    justify-content: center;
+}
+
+.botones {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;    
+}
+
+.boton-actualizar {
+    padding: 10px 20px 10px 20px;
+}
+
+.boton-cancelar {
+    padding: 10px 20px 10px 20px;
+    background-color: grey;
+}
