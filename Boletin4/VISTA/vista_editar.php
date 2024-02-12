@@ -1,5 +1,6 @@
 <?php require '../VISTA/LAYOUT/layout.php'; ?>
 
+<link rel="stylesheet" href="../VISTA/LAYOUT/layout.css">
 <div class="titulo">
     <h2>Editar Producto</h2>
 </div>

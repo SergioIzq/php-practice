@@ -1,4 +1,6 @@
 <?php require '../VISTA/LAYOUT/layout.php'; ?>
+<link rel="stylesheet" href="../VISTA/LAYOUT/layout.css">
+
 <!-- HTML para mensaje de éxito y redirección -->
 <div class="box">
     <div class="mensajeExito">
@@ -9,10 +11,7 @@
     </div>
 </div>
 <?php
-    // Encabezado PHP para redireccionar a la página principal después de 3 segundos
-    header("refresh:3;url=../index.php");
-    exit(); // Se termina la ejecución del script para evitar que se procese más código HTML o PHP
+// Encabezado PHP para redireccionar a la página principal después de 3 segundos
+header("refresh:3;url=../index.php");
+exit(); // Se termina la ejecución del script para evitar que se procese más código HTML o PHP
 ?>
-<!-- HTML para mensaje de error de formulario -->
-<p>Error: No se ha enviado el formulario correctamente.</p>
-

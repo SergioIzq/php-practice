@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             // Mostrar formulario de edición
             require '../VISTA/vista_editar.php';
+            
         }
     } else {
         echo "Error: No se ha proporcionado el código del producto para editar.";
