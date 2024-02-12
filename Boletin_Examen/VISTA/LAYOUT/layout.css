@@ -8,6 +8,7 @@ body {
     margin: 0;
     min-height: 100vh;
     position: relative;
+    background-color: rgb(219, 219, 219);
 }
 header {
     background: rgb(75, 75, 75);
@@ -41,7 +42,7 @@ li > a:hover {
     padding: 20px;
 }
 
-a {
+.navbar-link {
     text-decoration: none;
     color: white;
     padding: 20px;
@@ -55,4 +56,194 @@ footer {
     width: 100%;
     position: fixed;
     bottom: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 89%;
+    height: 174px;
+    background-color: white;
+    margin: auto;
+    border-radius: 8px;
+    margin-top: 53px;
+}
+
+.tituloH2 {
+    margin-top: -48px;
+}
+
+.botones {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    gap: 32px;
+    margin-top: 22px;
+}
+
+.boton-cliente {
+    padding: 10px;
+    background-color: rgb(75, 75, 75);
+    border-color: rgb(75, 75, 75);
+    border: 0px;
+    border-radius: 8px;
+}
+
+.boton-personal {
+    padding: 10px;
+    background-color: rgb(75, 75, 75);
+    border-color: rgb(75, 75, 75);
+    border: 0px;
+    border-radius: 8px;
+}
+
+.boton-cliente:hover {
+    background-color: rgb(46, 46, 46);
+}
+
+.boton-personal:hover {
+    background-color: rgb(46, 46, 46);
+}
+
+.containerRegistro {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    height: 470px;
+    background-color: white;
+    margin: auto;
+    border-radius: 8px;
+    margin-top: 53px;
+}
+
+.formulario-registro {
+    margin-top: 40px;
+}
+
+.tituloRegistro {
+    margin-top: 60px;
+}
+
+.input-group1, .input-group2 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.input-group1 {
+    margin-bottom: 20px;
+}
+.input-email, .input-contrasena {
+    width: 486px;
+    border-color: rgba(0, 0, 0, 0.144);
+    border-radius: 8px;
+    height: 30px;    
+}
+
+.boton-enviar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+}
+
+.input-email:focus,
+.input-contrasena:focus {
+    border-color: rgba(0, 0, 0, 0.4); /* Cambia el color del borde al enfocar el input */
+    outline: none; /* Elimina el contorno predeterminado */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); /* Agrega una sombra al enfocar el input */
+}
+
+.button-registrarse {
+    padding: 10px 20px 10px 20px;
+    background-color: rgb(75, 75, 75);
+    border-color: rgb(75, 75, 75);
+    border: 0px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.button-registrarse:hover {
+    background-color: rgb(46, 46, 46);
+}
+
+.inicia-sesion {
+    display: flex;
+    justify-content: center;
+}
+
+p>a {
+    color: rgb(75, 75, 75);
+}
+
+p>a:hover {
+    color: rgb(19, 18, 18);
+}
+
+.p-central {
+    margin-top: 30px;
+}
+
+.buttons-user {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+button > a {
+    color: white;
+    text-decoration: none;
+}
+
+.reservas-table {
+    width: 80%;
+    border-collapse: collapse; /* Borde unido entre las celdas */
+    margin-top: 20px;
+}
+
+.reservas-table th, .reservas-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ccc; /* Borde delgado y gris en todas las celdas */
+}
+
+.reservas-table th {
+    background-color: #f2f2f2;
+}
+
+.reservas-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.cancelar-btn {
+    padding: 8px 16px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.cancelar-btn:hover {
+    background-color: rgb(190, 0, 0);
+}
+
+.tituloPersonal {
+    width: 100%;
+}
+.tituloPersonal > h1 > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

@@ -14,14 +14,14 @@
 <body>
     <header>
         <div class="titulo">
-            <h1><a href="../../index.php">Restaurante XYZ</a></h1>
+            <h1><a class="navbar-link" href="../index.php">Restaurante XYZ</a></h1>
         </div>
         <navbar class="menu">
             <ul class="links">
-                <li><a href="../../index.php">Inicio</a></li>
-                <li><a href="../../CONTROLADOR/controlador_reservas.php">Reservas</a></li>
-                <li><a href="../../CONTROLADOR/controlador_menu">Menú</a></li>
-                <li><a href="../../CONTROLADOR/contacto">Contacto</a></li>
+                <li><a class="navbar-link" href="../index.php">Inicio</a></li>
+                <li><a class="navbar-link" href="controlador_reservas.php">Reservas</a></li>
+                <li><a class="navbar-link" href="controlador_menu.php">Menú</a></li>
+                <li><a class="navbar-link" href="controlador_contacto.php">Contacto</a></li>
             </ul>
         </navbar>
     </header>

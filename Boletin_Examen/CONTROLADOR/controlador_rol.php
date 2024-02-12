@@ -1,1 +1,2 @@
-<?php require 'VISTA/vista_rol.php';
+<?php  require 'VISTA/vista_rol.php';
+
