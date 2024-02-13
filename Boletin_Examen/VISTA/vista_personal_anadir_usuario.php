@@ -15,18 +15,9 @@
 
 <body>
     <header>
-        <div class="titulo">
-            <h1><a class="navbar-link" href="../index.php">Restaurante XYZ</a></h1>
+        <div class="tituloPersonal">
+            <h1><a class="navbar-link" href="../index.php">Restaurante XYZ - Área de Personal</a></h1>
         </div>
-        <navbar class="menu">
-            <ul class="links">
-                <li><a class="navbar-link" href="../index.php">Inicio</a></li>
-                <li><a class="navbar-link" href="controlador_reservas.php">Reservas Activas</a></li>
-                <li><a class="navbar-link" href="controlador_menu.php">Nueva Reserva</a></li>
-                <li><a class="navbar-link" href="controlador_contacto.php">Histórico de Reservas</a></li>
-                <li><a class="navbar-link" href="controlador_contacto.php">Cerrar sesión</a></li>
-            </ul>
-        </navbar>
     </header>
 
     <div class="containerRegistro">
@@ -34,14 +25,14 @@
             <h1>Añadir Nuevo Usuario</h1>
         </div>
         <div class="formulario-registro">
-            <form action="" method="post">
+            <form action="controlador_personal_anadir_usuario.php" method="post">
                 <div class="input-group1">
                     <label for="usuario">Usuario:</label>
                     <input class="input-email" type="text" name="usuario" required />
                 </div>
                 <div class="input-group2">
                     <label for="contrasenia">Contraseña:</label>
-                    <input class="input-contrasena" type="password" name="contrasenia" required />
+                    <input class="input-contrasena" type="password" name="contrasena" required />
                 </div>
                 <div class="boton-enviar">
                     <button class="button-registrarse" type="submit">Añadir Usuario</button>

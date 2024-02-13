@@ -19,9 +19,9 @@
         <navbar class="menu">
             <ul class="links">
                 <li><a class="navbar-link" href="../index.php">Inicio</a></li>
-                <li><a class="navbar-link" href="controlador_reservas.php">Reservas</a></li>
-                <li><a class="navbar-link" href="controlador_menu.php">Menú</a></li>
-                <li><a class="navbar-link" href="controlador_contacto.php">Contacto</a></li>
+                <li><a class="navbar-link" href="#">Reservas</a></li>
+                <li><a class="navbar-link" href="#">Menú</a></li>
+                <li><a class="navbar-link" href="#">Contacto</a></li>
             </ul>
         </navbar>
     </header>

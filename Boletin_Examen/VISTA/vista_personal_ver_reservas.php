@@ -15,23 +15,21 @@
 
 <body>
     <header>
-        <div class="titulo">
+        <div class="tituloPersonal">
             <h1><a class="navbar-link" href="../index.php">Restaurante XYZ</a></h1>
         </div>
-        <navbar class="menu">
-            <ul class="links">
-                <li><a class="navbar-link" href="../index.php">Inicio</a></li>
-                <li><a class="navbar-link" href="controlador_reservas.php">Reservas Activas</a></li>
-                <li><a class="navbar-link" href="controlador_menu.php">Nueva Reserva</a></li>
-                <li><a class="navbar-link" href="controlador_contacto.php">Histórico de Reservas</a></li>
-                <li><a class="navbar-link" href="controlador_contacto.php">Cerrar sesión</a></li>
-            </ul>
-        </navbar>
     </header>
 
     <div class="containerHistorico">
         <div class="tituloRegistro">
-            <h2>Reservas Activas</h2>
+            <h2>Visualizar Reservas</h2>
+        </div>
+        <div class="header-filtro">
+            <form action="../CONTROLADOR/controlador_personal_ver_reservas.php" method="POST">
+                <label for="fecha">Seleccione Fecha:</label>
+                <input type="date" name="fecha">
+                <button type="submit">Filtrar</button>
+            </form>
         </div>
         <table class="reservas-table">
             <thead>
@@ -45,16 +43,53 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th class="correo">cliente1@ejemplo.com</th>
-                    <td class="fecha">2024-02-12</td>
-                    <td class="hora">19:00</td>
-                    <td class="mesa">4</td>
-                    <td class="descripcion">Reserva para 2 personas</td>
-                    <td class="acciones"><button class="cancelar-btn">Cancelar</button></td>
-                </tr>
-                <!-- Puedes agregar más filas aquí -->
+                <?php
+                // Verificar si $reservas no está vacío antes de iterar sobre él
+                if (!empty($reservas)) {
+                    // Obtener la fecha y hora actual
+                    $fecha_actual = date('Y-m-d H:i:s');
+
+                    foreach ($reservas as $reserva):
+                        // Comparar si la fecha y hora de la reserva es mayor que la fecha y hora actual
+                        if ($reserva['Fecha'] . ' ' . $reserva['Hora'] >= $fecha_actual):
+                            ?>
+                            <tr>
+                                <td class="correo">
+                                    <?php echo $reserva['Correo_cliente']; ?>
+                                </td>
+                                <td class="fecha">
+                                    <?php echo $reserva['Fecha']; ?>
+                                </td>
+                                <td class="hora">
+                                    <?php echo $reserva['Hora']; ?>
+                                </td>
+                                <td class="mesa">
+                                    <?php echo $reserva['Mesa']; ?>
+                                </td>
+                                <td class="descripcion">
+                                    <?php echo $reserva['Descripcion']; ?>
+                                </td>
+                                <td class="acciones">
+                                    <form action="../CONTROLADOR/controlador_cancelar_reserva.php" method="POST">
+                                        <input type="hidden" name="fecha" value="<?php echo $reserva['Fecha']; ?>">
+                                        <input type="hidden" name="hora" value="<?php echo $reserva['Hora']; ?>">
+                                        <input type="hidden" name="mesa" value="<?php echo $reserva['Mesa']; ?>">
+                                        <input type="hidden" name="correo" value="<?php echo $reserva['Correo_cliente']; ?>">
+                                        <button type="submit" class="cancelar-btn">Cancelar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <?php
+                        endif;
+                    endforeach;
+                } else {
+                    // Si no hay reservas disponibles, mostrar un mensaje alternativo
+                    echo "<tr><td colspan='6'>No hay reservas disponibles.</td></tr>";
+                    echo "<tr><td colspan='6'>Busque una fecha para encontrar reservas.</td></tr>";
+                }
+                ?>
             </tbody>
+
         </table>
 
     </div>

@@ -1,4 +1,12 @@
-<?php require '../VISTA/LAYOUT/layout.php';
+<?php
+// Verificar si hay una cookie definida y no está vacía
+if(isset($_COOKIE['correo_sesion']) && !empty($_COOKIE['correo_sesion'])) {
+    // Redirigir a otra página
+    header("Location: controlador_cliente_sesion_iniciada.php");
+    exit; // Terminar la ejecución del script
+}
+
+require '../VISTA/LAYOUT/layout.php';
 require '../VISTA/vista_cliente_registro.php';
 require '../MODELO/modelo_cliente_registro.php';
 

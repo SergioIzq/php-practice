@@ -12,11 +12,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         // Verificar si el usuario está registrado
         if (estaRegistradoUsuario($correo, $contrasena)) {
+
+            setcookie("correo_sesion", $correo, time() + (86400 * 30), "/"); // Cookie válida por 30 días
+
             // Usuario registrado, redirigir a una página de sesión iniciada
-            header("refresh:3;url=controlador_cliente_sesion_iniciada.php?email=" . urlencode($correo));
+            header("refresh:3;url=controlador_cliente_sesion_iniciada.php");
             ?>
             <div class="consultaHTML">
-                <p>Iniciando sesión...</p>            
+                <p>Iniciando sesión...</p>
+            </div>
+            <div class="loading">
+                <div class="spinner-border text-secondary" role="status">
+                    <span class="sr-only"></span>
+                </div>
             </div>
             <?php
             exit; // Terminar la ejecución del script
@@ -25,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("refresh:1;url=controlador_cliente_inicia_sesion.php");
             ?>
             <div class="consultaHTML">
-                <p>Correo o contraseña incorrectos</p>            
+                <p>Correo o contraseña incorrectos</p>
             </div>
             <?php
             exit; // Terminar la ejecución del script

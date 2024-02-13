@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS RESERVAS (
     Fecha DATE,
     Hora TIME,
     Mesa INT,
-    Descripción VARCHAR(255),
+    Descripcion VARCHAR(255),
     Correo_cliente VARCHAR(255),
     FOREIGN KEY (Correo_cliente) REFERENCES CLIENTES(Correo),
     CONSTRAINT pk_reservas PRIMARY KEY (Fecha, Hora, Mesa)
@@ -24,8 +24,8 @@ CREATE TABLE IF NOT EXISTS RESERVAS (
 -- Crear tabla EMPLEADOS si no existe
 CREATE TABLE IF NOT EXISTS EMPLEADOS (
     Usuario VARCHAR(255) PRIMARY KEY,
-    Contraseña VARCHAR(255)
+    Contrasena VARCHAR(255)
 );
 
 -- Asegurarse de que haya al menos un empleado para poder registrar los demás
-INSERT INTO EMPLEADOS (Usuario, Contraseña) VALUES ('admin', 'admin');
+INSERT INTO EMPLEADOS (Usuario, Contrasena) VALUES ('admin', 'admin');

@@ -13,23 +13,29 @@
 
 <body>
     <header>
-        <div class="titulo">
+        <div class="tituloPersonal">
             <h1><a class="navbar-link" href="../index.php">Restaurante XYZ</a></h1>
         </div>
-        <navbar class="menu">
-            <ul class="links">
-                <li><a class="navbar-link" href="../index.php">Inicio</a></li>
-                <li><a class="navbar-link" href="controlador_reservas.php">Reservas Activas</a></li>
-                <li><a class="navbar-link" href="controlador_menu.php">Nueva Reserva</a></li>
-                <li><a class="navbar-link" href="controlador_contacto.php">Histórico de Reservas</a></li>
-                <li><a class="navbar-link" href="controlador_contacto.php">Cerrar sesión</a></li>
-            </ul>
-        </navbar>
     </header>
 
     <div class="containerRegistro">
         <div class="tituloRegistro">
-            <h2>Usuario: {{ correo sacado de la base de datos }}</h2>
+        <?php
+            // Verificar si la cookie existe y tiene un valor
+            if (isset($_COOKIE['usuario_sesion'])) {
+                // Mostrar el usuario almacenado en la cookie
+                ?>
+                <h2>Bienvenido
+                    <?php echo $_COOKIE['usuario_sesion']; ?>
+                </h2>
+                <?php
+            } else {
+                // Si la cookie no está presente, mostrar un mensaje genérico
+                ?>
+                <h2>Bienvenido</h2>
+                <?php
+            }
+            ?>
         </div>
         <div class="buttons-user">
             <button class="button-registrarse"><a href="controlador_personal_anadir_usuario.php">Añadir Nuevo Usuario</a></button>
