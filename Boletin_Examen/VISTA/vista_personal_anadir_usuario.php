@@ -15,17 +15,26 @@
 
 <body>
     <header>
-        <div class="tituloPersonal">
-            <h1><a class="navbar-link" href="../index.php">Restaurante XYZ - Área de Personal</a></h1>
+        <div class="titulo">
+            <h1><a class="navbar-link" href="../index.php">Restaurante XYZ</a></h1>
         </div>
+        <navbar class="menu">
+            <ul class="links">
+                <li><a class="navbar-link" href="../index.php">Inicio</a></li>
+                <li><a class="navbar-link" href="controlador_reservas.php">Reservas Activas</a></li>
+                <li><a class="navbar-link" href="controlador_menu.php">Nueva Reserva</a></li>
+                <li><a class="navbar-link" href="controlador_contacto.php">Histórico de Reservas</a></li>
+                <li><a class="navbar-link" href="controlador_contacto.php">Cerrar sesión</a></li>
+            </ul>
+        </navbar>
     </header>
 
     <div class="containerRegistro">
         <div class="tituloRegistro">
-            <h1>Inicia sesión</h1>
+            <h1>Añadir Nuevo Usuario</h1>
         </div>
         <div class="formulario-registro">
-            <form action="controlador_personal_sesion_iniciada.php" method="post">
+            <form action="" method="post">
                 <div class="input-group1">
                     <label for="usuario">Usuario:</label>
                     <input class="input-email" type="text" name="usuario" required />
@@ -35,11 +44,12 @@
                     <input class="input-contrasena" type="password" name="contrasenia" required />
                 </div>
                 <div class="boton-enviar">
-                    <button class="button-registrarse" type="submit">Iniciar sesión</button>
+                    <button class="button-registrarse" type="submit">Añadir Usuario</button>
                 </div>
             </form>
         </div>
     </div>
+
 
     <footer>© 2024 Restaurante XYZ. Todos los derechos reservados.</footer>
 

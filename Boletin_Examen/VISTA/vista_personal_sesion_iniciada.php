@@ -22,22 +22,18 @@
                 <li><a class="navbar-link" href="controlador_reservas.php">Reservas Activas</a></li>
                 <li><a class="navbar-link" href="controlador_menu.php">Nueva Reserva</a></li>
                 <li><a class="navbar-link" href="controlador_contacto.php">Histórico de Reservas</a></li>
-                <li><a class="navbar-link" href="../index.php">Cerrar sesión</a></li>
+                <li><a class="navbar-link" href="controlador_contacto.php">Cerrar sesión</a></li>
             </ul>
         </navbar>
     </header>
 
     <div class="containerRegistro">
         <div class="tituloRegistro">
-            <h2>Bienvenido <?php echo $correo; ?></h2>
-        </div>
-        <div class="p-central">
-            <p>Selecciona una opción:</p>
+            <h2>Usuario: {{ correo sacado de la base de datos }}</h2>
         </div>
         <div class="buttons-user">
-            <button class="button-registrarse"><a href="controlador_gestionar_reservas.php">Ver y Gestionar Reservas Activas</a></button>
-            <button class="button-registrarse"><a href="controlador_nueva_reserva.php">Hacer Nueva Reserva</a></button>
-            <button class="button-registrarse"><a href="controlador_cliente_historico_reservas.php">Ver Histórico de Reservas</a></button>
+            <button class="button-registrarse"><a href="controlador_personal_anadir_usuario.php">Añadir Nuevo Usuario</a></button>
+            <button class="button-registrarse"><a href="controlador_personal_ver_reservas.php">Visualizar Reservas</a></button>
         </div>
     </div>
 

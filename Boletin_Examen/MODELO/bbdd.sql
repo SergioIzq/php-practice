@@ -7,7 +7,7 @@ USE examen_php;
 -- Crear tabla CLIENTES si no existe
 CREATE TABLE IF NOT EXISTS CLIENTES (
     Correo VARCHAR(255) PRIMARY KEY,
-    Contraseña VARCHAR(255)
+    Contrasena VARCHAR(255)
 );
 
 -- Crear tabla RESERVAS si no existe

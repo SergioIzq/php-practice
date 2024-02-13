@@ -1,0 +1,1 @@
+<?php require '../VISTA/vista_personal_sesion_iniciada.php';

@@ -4,7 +4,7 @@
         <h1>Regístrate</h1>
     </div>
     <div class="formulario-registro">
-        <form action="controlador_cliente_inicia_sesion.php" method="post">
+        <form action="controlador_cliente_registro.php" method="post">
             <div class="input-group1">
                 <label for="correo">Correo electrónico:</label>
                 <input class="input-email" type="email" name="email" required />

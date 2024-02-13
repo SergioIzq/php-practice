@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <title>Restaurante XYZ</title>
 </head>
 
@@ -22,23 +24,35 @@
                 <li><a class="navbar-link" href="controlador_reservas.php">Reservas Activas</a></li>
                 <li><a class="navbar-link" href="controlador_menu.php">Nueva Reserva</a></li>
                 <li><a class="navbar-link" href="controlador_contacto.php">Histórico de Reservas</a></li>
-                <li><a class="navbar-link" href="../index.php">Cerrar sesión</a></li>
+                <li><a class="navbar-link" href="controlador_contacto.php">Cerrar sesión</a></li>
             </ul>
         </navbar>
     </header>
 
-    <div class="containerRegistro">
+    <div class="containerHistorico">
         <div class="tituloRegistro">
-            <h2>Bienvenido <?php echo $correo; ?></h2>
+            <h2>Histórico de Reservas</h2>
         </div>
-        <div class="p-central">
-            <p>Selecciona una opción:</p>
-        </div>
-        <div class="buttons-user">
-            <button class="button-registrarse"><a href="controlador_gestionar_reservas.php">Ver y Gestionar Reservas Activas</a></button>
-            <button class="button-registrarse"><a href="controlador_nueva_reserva.php">Hacer Nueva Reserva</a></button>
-            <button class="button-registrarse"><a href="controlador_cliente_historico_reservas.php">Ver Histórico de Reservas</a></button>
-        </div>
+        <table class="reservas-table">
+            <thead>
+                <tr>
+                    <th class="fecha">Fecha</th>
+                    <th class="hora">Hora</th>
+                    <th class="mesa">Mesa</th>
+                    <th class="descripcion">Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="fecha">2024-02-12</td>
+                    <td class="hora">19:00</td>
+                    <td class="mesa">Mesa 4</td>
+                    <td class="descripcion">Reserva para 2 personas</td>
+                </tr>
+                <!-- Puedes agregar más filas aquí -->
+            </tbody>
+        </table>
+
     </div>
 
 
